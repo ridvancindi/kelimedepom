@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-
+import 'package:easy_localization/easy_localization.dart';
 import 'admobHelper.dart';
 import 'db/dbHelper.dart';
 import 'models/data.dart';
@@ -70,7 +70,7 @@ class _upgrateDataState extends State<upgrateData> {
         child: Scaffold(
             appBar: AppBar(
               title: Text(
-                "Kelime Güncelleme",
+                "editdata.appbar".tr(),
                 style: TextStyle(color: Colors.white),
               ),
             ),
@@ -87,7 +87,7 @@ class _upgrateDataState extends State<upgrateData> {
                             child: Column(
                               children: [
                                 Text(
-                                  "Bu İsim Bulunmakta.",
+                                  "editdata.error3".tr(),
                                   style: TextStyle(color: Colors.red),
                                 ),
                                 SizedBox(
@@ -114,9 +114,9 @@ class _upgrateDataState extends State<upgrateData> {
                                 autofocus: false,
                                 validator: (kontroledilecekname) {
                                   if (kontroledilecekname!.isEmpty) {
-                                    return "Burası Boş Olamaz";
+                                    return "editdata.error1".tr();
                                   } else if (kontroledilecekname.length < 2) {
-                                    return "3 Karakterden Küçük Olamaz...";
+                                    return "editdata.error2".tr();
                                   } else
                                     return null;
                                 },
@@ -128,7 +128,7 @@ class _upgrateDataState extends State<upgrateData> {
                                   disabledBorder: InputBorder.none,
                                   contentPadding:
                                       EdgeInsets.fromLTRB(10, 10, 10, 0),
-                                  labelText: "Kelime",
+                                  labelText: "editdata.input1".tr(),
                                 )),
                           ),
                           SizedBox(
@@ -149,9 +149,9 @@ class _upgrateDataState extends State<upgrateData> {
                                 autofocus: false,
                                 validator: (kontroledilecekname) {
                                   if (kontroledilecekname!.isEmpty) {
-                                    return "Burası Boş Olamaz";
+                                    return "editdata.error1".tr();
                                   } else if (kontroledilecekname.length < 2) {
-                                    return "3 Karakterden Küçük Olamaz...";
+                                    return "editdata.error1".tr();
                                   } else
                                     return null;
                                 },
@@ -163,7 +163,7 @@ class _upgrateDataState extends State<upgrateData> {
                                   disabledBorder: InputBorder.none,
                                   contentPadding:
                                       EdgeInsets.fromLTRB(10, 10, 10, 0),
-                                  labelText: "Karşılığı",
+                                  labelText: "editdata.input2".tr(),
                                 )),
                           ),
                         ],
@@ -175,7 +175,7 @@ class _upgrateDataState extends State<upgrateData> {
                         alignment: Alignment.centerLeft,
                         child: ElevatedButton(
                             child: Text(
-                              "Kaydet",
+                              "editdata.save".tr(),
                               style: TextStyle(color: Colors.white),
                             ),
                             onPressed: () {

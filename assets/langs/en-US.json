@@ -1,0 +1,45 @@
+{
+  "homepage": {
+    "appbar": "Home Page",
+    "words" : "The words",
+    "memorized": "Memorized",
+    "todayadd" : "Added Today",
+    "todaymemorized" : "Memorized Today",
+    "active" : "Actives",
+    "passive" : "Passives",
+    "addword" : "Add Word",
+    "quiz" : "Quiz",
+    "edit" : "Edit",
+    "delete" : "Delete",
+    "message1" : "You Must Have Minimum 4 Active Words",
+    "message2" : "Successfully Deleted"
+  },
+  "editdata" : {
+    "appbar": "Word Update",
+    "input1" : "Word",
+    "input2" : "Equivalent",
+    "save" : "Save",
+    "error1" : "This Cannot Be Empty",
+    "error2" : "Cannot be less than 3 characters...",
+    "error3" : "This Name Exists.",
+    "appbar1" : "Add Word"
+  },
+  "quiz" : {
+    "appbar": "Quiz",
+    "word" : "Word",
+    "input" : "Equivalent",
+    "skip" : "Next",
+    "error" : "This Cannot Be Empty",
+    "final" : "Finish"
+  },
+  "quizFinal" : {
+    "appbar": "Your Exam Result",
+    "truenum" : "Correct Number",
+    "falsenum" : "Wrong Number",
+    "title" : "Words You Know Wrong"
+  },
+  "langPage" : {
+    "title": "Choose Your Native Language",
+    "skip" : "Continue"
+  }
+}

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:kelimedepom/quizFinish.dart';
-
+import 'package:easy_localization/easy_localization.dart';
 import 'admobHelper.dart';
 import 'models/data.dart';
 
@@ -53,7 +53,7 @@ class _QuizPageState extends State<QuizPage> {
         },
         child: Scaffold(
           appBar: AppBar(
-            title: Text("Quiz"),
+            title: Text("quiz.appbar".tr()),
             automaticallyImplyLeading: false,
             actions: [
               Container(
@@ -78,7 +78,7 @@ class _QuizPageState extends State<QuizPage> {
               Padding(
                 padding: const EdgeInsets.only(left: 20),
                 child: Text(
-                  "Kelime : ${question[id].kelime}",
+                  "quiz.word".tr() +  ": ${question[id].kelime}",
                   style: TextStyle(fontSize: 15),
                 ),
               ),
@@ -101,7 +101,7 @@ class _QuizPageState extends State<QuizPage> {
                           autofocus: false,
                           validator: (kontroledilecekname) {
                             if (kontroledilecekname!.isEmpty) {
-                              return "Burası Boş Olamaz";
+                              return "quiz.error".tr();
                             } else if (kontroledilecekname !=
                                 question[id].karsilik) {
                               falseQuestion.add({
@@ -124,7 +124,7 @@ class _QuizPageState extends State<QuizPage> {
                             errorBorder: InputBorder.none,
                             disabledBorder: InputBorder.none,
                             contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                            labelText: "Karşılığı",
+                            labelText: "quiz.input".tr(),
                           )),
                     )),
               ),
@@ -151,7 +151,7 @@ class _QuizPageState extends State<QuizPage> {
                       });
                     },
                     child:
-                        Text(id != question.length - 1 ? "Sonraki" : "Bitir")),
+                        Text(id != question.length - 1 ? "quiz.skip".tr() : "quiz.final".tr())),
               ),
               SizedBox(
                 height: 15,

@@ -1,0 +1,45 @@
+{
+    "homepage": {
+      "appbar": "Page d'accueil",
+      "words" : "Mots",
+      "memorized": "Memorized",
+      "todayadd" : "Ajouté aujourd'hui",
+      "todaymemorized" : "Aujourd'hui mémorisé",
+      "active" : "Actifs",
+      "passive" : "Passifs",
+      "addword": "Ajouter un mot",
+      "quiz" : "Quiz",
+      "edit" : "Modifier",
+      "delete" : "Supprimer",
+      "message1" : "Vous devez avoir au moins 4 mots actifs",
+      "message2" : "Supprimé avec succès"
+    },
+    "editdata" : {
+      "appbar": "Mise à jour Word",
+      "input1" : "Mot",
+      "input2" : "Équivalent",
+      "save" : "Enregistrer",
+      "error1" : "Ceci ne peut pas être vide",
+      "error2" : "Ne peut pas contenir moins de 2 caractères...",
+      "error3" : "Ce nom existe.",
+      "appbar1" : "Ajouter un mot"
+    },
+    "quiz" : {
+      "appbar": "Quiz",
+      "word" : "Mot",
+      "input" : "Équivalent",
+      "skip" : "Suivant",
+      "error" : "Ceci ne peut pas être vide",
+      "final" : "Terminer"
+    },
+    "quizFinal" : {
+      "appbar": "Le résultat de votre quiz",
+      "truenum" : "Nombre de corrects",
+      "falsenum" : "Numéro incorrect",
+      "title" : "Mots mal compris"
+    },
+    "langPage" : {
+      "title": "Choisissez votre langue maternelle",
+      "skip": "Continuer"
+    }
+  }

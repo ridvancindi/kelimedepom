@@ -1,0 +1,45 @@
+{
+    "homepage": {
+      "appbar": "Startseite",
+      "words" : "Die Worte",
+      "memorized": "Gespeichert",
+      "todayadd" : "Heute hinzugefügt",
+      "todaymemorized": "Heute gespeichert",
+      "active" : "Aktiv",
+      "passive" : "Passiv",
+      "addword" : "Wort hinzufügen",
+      "quiz": "Quiz",
+      "edit" : "Bearbeiten",
+      "delete" : "Löschen",
+      "message1": "Sie müssen mindestens 4 aktive Wörter haben",
+      "message2" : "Erfolgreich gelöscht"
+    },
+    "editdata" : {
+      "appbar": "Word-Update",
+      "input1": "Wort",
+      "input2": "Äquivalent",
+      "save" : "Speichern",
+      "error1": "Dies darf nicht leer sein",
+      "error2" : "Kann nicht weniger als 3 Zeichen umfassen...",
+      "error3" : "Dieser Name existiert.",
+      "appbar1": "Wort hinzufügen"
+    },
+    "quiz" : {
+      "appbar": "Quiz",
+      "word" : "Wort",
+      "input" : "Äquivalent",
+      "skip" : "Weiter",
+      "error": "Das darf nicht leer sein",
+      "final" : "Fertig stellen"
+    },
+    "quizFinal" : {
+      "appbar": "Ihr Prüfungsergebnis",
+      "truenum" : "Richtige Nummer",
+      "falsenum" : "Falsche Nummer",
+      "title" : "Worte, die Sie falsch kennen"
+    },
+    "langPage" : {
+      "title": "Wähle Deine Muttersprache",
+      "skip" : "Fortsetzen"
+    }
+  }

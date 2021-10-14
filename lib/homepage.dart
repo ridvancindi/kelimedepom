@@ -2,9 +2,11 @@ import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:intl/intl.dart';
+import 'package:kelimedepom/langpage.dart';
 import 'package:kelimedepom/quiz.dart';
 import 'package:kelimedepom/upgrateData.dart';
-
+import 'package:easy_localization/easy_localization.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'Notification.dart';
 import 'addData.dart';
 import 'db/dbHelper.dart';
@@ -22,6 +24,7 @@ class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   List<Data>? data;
   String? _createdDate;
+  int? number;
   String? _upgrateDate;
   TabController? tabController;
   int pasif = 0;
@@ -35,15 +38,25 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     super.initState();
-    localNotifyManager.setOnNotificationRecive(onNotificationReceive);
+    //localNotifyManager.setOnNotificationRecive(onNotificationReceive);
     //localNotifyManager.setOnNotificationClick(onNotificationClick);
     _databaseHelper = DbHelper();
     tabController = TabController(length: 2, vsync: this);
+    _veriGetir().then((value){
+      if (number == null) {
+        print("gelen veri boş");
+        Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LangPage()),
+                );
+      }print(number);  
+    });
+    
   }
 
-  onNotificationReceive(ReceiveNotification notification) {
-    print("Notifacation Received ");
-  }
+  // onNotificationReceive(ReceiveNotification notification) {
+  //   print("Notifacation Received ");
+  // }
 
   // onNotificationClick(String payload)
   // {
@@ -63,19 +76,22 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       key: _scaffoldkey,
       appBar: AppBar(
-        // actions: [
-        //   Container(
-        //       margin: EdgeInsets.only(right: 15),
-        //       child: IconButton(
-        //         onPressed: () async {
-        //           showDialogWithFields(context);
-        //         },
-        //         icon: Icon(Icons.settings),
-        //         color: Colors.white,
-        //       ))
-        // ],
+         actions: [
+           Container(
+               margin: EdgeInsets.only(right: 15),
+               child: IconButton(
+                 onPressed: () async {
+                    Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LangPage()),
+                );
+                 },
+                 icon: Icon(Icons.settings),
+                 color: Colors.white,
+               ))
+         ],
         title: Text(
-          "AnaSayfa",
+          "homepage.appbar".tr(),
           style: TextStyle(color: Colors.white),
         ),
       ),
@@ -105,7 +121,7 @@ class _HomePageState extends State<HomePage>
                                   height: 10,
                                 ),
                                 Text(
-                                  "Kelimeler",
+                                  "homepage.words".tr(),
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                       fontSize: 13,
@@ -158,7 +174,7 @@ class _HomePageState extends State<HomePage>
                                   height: 10,
                                 ),
                                 Text(
-                                  "Ezberlenen",
+                                  "homepage.memorized".tr(),
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                       fontSize: 13,
@@ -216,7 +232,7 @@ class _HomePageState extends State<HomePage>
                                   height: 10,
                                 ),
                                 Text(
-                                  "Bugün Ezberlenen",
+                                  "homepage.todaymemorized".tr(),
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                       fontSize: 13,
@@ -269,7 +285,7 @@ class _HomePageState extends State<HomePage>
                                   height: 10,
                                 ),
                                 Text(
-                                  "Bugün Eklenen",
+                                 "homepage.todayadd".tr(),
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                       fontSize: 13,
@@ -324,10 +340,10 @@ class _HomePageState extends State<HomePage>
                                 fontSize: 16, fontWeight: FontWeight.w800),
                             tabs: [
                               Tab(
-                                text: "Aktiler",
+                                text:"homepage.active".tr(),
                               ),
                               Tab(
-                                text: "Pasifler",
+                                text: "homepage.passive".tr(),
                               ),
                             ]),
                       ),
@@ -447,7 +463,7 @@ class _HomePageState extends State<HomePage>
                                                               if (result) {}
                                                             },
                                                             child: Text(
-                                                              "Düzenle",
+                                                              "homepage.edit".tr(),
                                                               style: TextStyle(
                                                                   color: Colors
                                                                       .white),
@@ -467,7 +483,7 @@ class _HomePageState extends State<HomePage>
                                                                       .id,
                                                                   index);
                                                             },
-                                                            child: Text("Sil",
+                                                            child: Text("homepage.delete".tr(),
                                                                 style: TextStyle(
                                                                     color: Colors
                                                                         .white)))
@@ -583,7 +599,7 @@ class _HomePageState extends State<HomePage>
                                                           if (result) {}
                                                         },
                                                         child: Text(
-                                                          "Düzenle",
+                                                          "homepage.edit".tr(),
                                                           style: TextStyle(
                                                               color:
                                                                   Colors.white),
@@ -601,7 +617,7 @@ class _HomePageState extends State<HomePage>
                                                               data![index].id,
                                                               index);
                                                         },
-                                                        child: Text("Sil",
+                                                        child: Text("homepage.delete".tr(),
                                                             style: TextStyle(
                                                                 color: Colors
                                                                     .white)))
@@ -631,7 +647,7 @@ class _HomePageState extends State<HomePage>
             backgroundColor: Colors.blue,
             foregroundColor: Colors.white,
             child: Icon(Icons.add),
-            label: "Kelime Ekle",
+            label: "homepage.addword".tr(),
             onTap: () async {
               setState(() {});
               bool result = await Navigator.push(
@@ -647,7 +663,7 @@ class _HomePageState extends State<HomePage>
             backgroundColor: Colors.green,
             foregroundColor: Colors.white,
             child: Icon(Icons.receipt_long_rounded),
-            label: "Quiz",
+            label: "homepage.quiz".tr(),
             onTap: () async {
               if (data!.length - pasif >= 4) {
                 setState(() {});
@@ -662,7 +678,7 @@ class _HomePageState extends State<HomePage>
                 }
               } else {
                 _scaffoldkey.currentState!.showSnackBar(SnackBar(
-                  content: Text("Minimum 4 Tane Aktif Kelimeniz Bulunmalı"),
+                  content: Text("homepage.message1".tr()),
                   duration: Duration(seconds: 2),
                 ));
               }
@@ -688,7 +704,12 @@ class _HomePageState extends State<HomePage>
       // ),
     );
   }
-
+  
+  Future<String> _veriGetir() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    number = pref.getInt("key");
+    return "Tamamlandı";
+  }
   void getData() {
     int _pasif = 0;
     int _addDaily = 0;
@@ -771,7 +792,7 @@ class _HomePageState extends State<HomePage>
     result = await _databaseHelper!.dataDelete(id);
     if (result == 1) {
       _scaffoldkey.currentState!.showSnackBar(SnackBar(
-        content: Text("Başarıyla Silindi"),
+        content: Text("homepage.message2".tr()),
         duration: Duration(seconds: 2),
       ));
     }

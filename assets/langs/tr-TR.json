@@ -1,0 +1,45 @@
+{
+  "homepage": {
+    "appbar": "AnaSayfa",
+    "words" : "Kelimeler",
+    "memorized": "Ezberlenen",
+    "todayadd" : "Bugün Eklenen",
+    "todaymemorized" : "Bugün Ezberlenen",
+    "active" : "Aktifler",
+    "passive" : "Pasifler",
+    "addword" : "Kelime Ekle",
+    "quiz" : "Quiz",
+    "edit" : "Düzenle",
+    "delete" : "Sil",
+    "message1" : "Minimum 4 Tane Aktif Kelimeniz Bulunmalı",
+    "message2" : "Başarıyla Silindi"
+  },
+  "editdata" : {
+    "appbar": "Kelime Güncelleme",
+    "input1" : "Kelime",
+    "input2" : "Karşılığı",
+    "save" : "Kaydet",
+    "error1" : "Burası Boş Olamaz",
+    "error2" : "2 Karakterden Küçük Olamaz...",
+    "error3" : "Bu İsim Bulunmakta.",
+    "appbar1" : "Kelime Ekle"
+  },
+  "quiz" : {
+    "appbar": "Quiz",
+    "word" : "Kelime",
+    "input" : "Karşılığı",
+    "skip" : "Sonraki",
+    "error" : "Burası Boş Olamaz",
+    "final" : "Bitir"
+  },
+  "quizFinal" : {
+    "appbar": "Quiz Sonucun",
+    "truenum" : "Doğru Sayısı",
+    "falsenum" : "Yanlış Sayısı",
+    "title" : "Yanlış Bildiğin Kelimeler"
+  },
+  "langPage" : {
+    "title": "Ana Dilinizi Seçin",
+    "skip" : "Devam Et"
+  }
+}

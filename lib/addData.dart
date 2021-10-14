@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
+import 'package:easy_localization/easy_localization.dart';
 import 'db/dbHelper.dart';
 import 'models/data.dart';
 
@@ -64,7 +64,7 @@ class _addDataState extends State<addData> {
       child: Scaffold(
           appBar: AppBar(
             title: Text(
-              "Kelime Ekle",
+              "editdata.appbar1".tr(),
               style: TextStyle(color: Colors.white),
             ),
             automaticallyImplyLeading: false,
@@ -87,7 +87,7 @@ class _addDataState extends State<addData> {
                           child: Column(
                             children: [
                               Text(
-                                "Bu İsim Bulunmakta.",
+                                "editdata.error3".tr(),
                                 style: TextStyle(color: Colors.red),
                               ),
                               SizedBox(
@@ -116,9 +116,9 @@ class _addDataState extends State<addData> {
                                 autofocus: false,
                                 validator: (kontroledilecekname) {
                                   if (kontroledilecekname!.isEmpty) {
-                                    return "Burası Boş Olamaz";
+                                    return "editdata.error1".tr();
                                   } else if (kontroledilecekname.length < 2) {
-                                    return "3 Karakterden Küçük Olamaz...";
+                                    return "editdata.error2".tr();
                                   } else
                                     return null;
                                 },
@@ -130,7 +130,7 @@ class _addDataState extends State<addData> {
                                   disabledBorder: InputBorder.none,
                                   contentPadding:
                                       EdgeInsets.fromLTRB(10, 10, 10, 0),
-                                  labelText: "Kelime",
+                                  labelText: "editdata.input1".tr(),
                                 )),
                           ),
                           SizedBox(
@@ -151,9 +151,9 @@ class _addDataState extends State<addData> {
                                 autofocus: false,
                                 validator: (kontroledilecekname) {
                                   if (kontroledilecekname!.isEmpty) {
-                                    return "Burası Boş Olamaz";
+                                    return "editdata.error1".tr();
                                   } else if (kontroledilecekname.length < 2) {
-                                    return "3 Karakterden Küçük Olamaz...";
+                                    return "editdata.error2".tr();
                                   } else
                                     return null;
                                 },
@@ -165,7 +165,7 @@ class _addDataState extends State<addData> {
                                   disabledBorder: InputBorder.none,
                                   contentPadding:
                                       EdgeInsets.fromLTRB(10, 10, 10, 0),
-                                  labelText: "Karşılığı",
+                                  labelText: "editdata.input2".tr(),
                                 )),
                           ),
                         ],
@@ -181,7 +181,7 @@ class _addDataState extends State<addData> {
                       alignment: Alignment.centerLeft,
                       child: ElevatedButton(
                           child: Text(
-                            "Kaydet",
+                            "editdata.save".tr(),
                             style: TextStyle(color: Colors.white),
                           ),
                           onPressed: () {

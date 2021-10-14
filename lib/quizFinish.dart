@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-
+import 'package:easy_localization/easy_localization.dart';
 import 'admobHelper.dart';
 
 class quizFinish extends StatefulWidget {
@@ -47,7 +47,7 @@ class _quizFinishState extends State<quizFinish> {
               Navigator.popUntil(context, (route) => route.isFirst);
             },
             icon: Icon(Icons.chevron_left_rounded)),
-        title: Text("Quiz Sonucu"),
+        title: Text("quizFinal.appbar".tr()),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -72,7 +72,7 @@ class _quizFinishState extends State<quizFinish> {
                                   height: 10,
                                 ),
                                 Text(
-                                  "Doğru Sayın",
+                                  "quizFinal.truenum".tr(),
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                       fontSize: 13,
@@ -125,7 +125,7 @@ class _quizFinishState extends State<quizFinish> {
                                   height: 10,
                                 ),
                                 Text(
-                                  "Yanlış Sayın",
+                                  "quizFinal.falsenum".tr(),
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                       fontSize: 13,
@@ -172,7 +172,7 @@ class _quizFinishState extends State<quizFinish> {
             Container(
                 margin: EdgeInsets.only(left: 15, top: 20),
                 child: Text(
-                  "Yanlış Bildiğin Kelimeler",
+                  "quizFinal.title".tr(),
                   style: TextStyle(fontSize: 15),
                 )),
             Container(
