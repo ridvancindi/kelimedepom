@@ -1,0 +1,45 @@
+{
+    "homepage": {
+      "appbar": "Pagina iniziale",
+      "words": "Le parole",
+      "memorized": "Memorizzato",
+      "todayadd": "Aggiunto oggi",
+      "todaymemorized": "Memorizzato oggi",
+      "active": "Attivi",
+      "passive": "Passivi",
+      "addword": "Aggiungi parola",
+      "quiz": "Quiz",
+      "edit": "Modifica",
+      "delete": "Elimina",
+      "message1": "Devi avere almeno 4 parole attive",
+      "message2": "Eliminato con successo"
+    },
+    "editdata": {
+      "appbar": "Aggiornamento parole",
+      "input1": "Parola",
+      "input2": "Equivalente",
+      "save": "Salva",
+      "error1": "Questo non può essere vuoto",
+      "error2": "Non può essere inferiore a 3 caratteri...",
+      "error3": "Questo nome esiste.",
+      "appbar1": "Aggiungi parola"
+    },
+    "quiz": {
+      "appbar": "Quiz",
+      "word": "Parola",
+      "input": "Equivalente",
+      "skip": "Avanti",
+      "error": "Questo non può essere vuoto",
+      "final": "Fine"
+    },
+    "quizFinale": {
+      "appbar": "Risultato del tuo esame",
+      "truenum": "Numero corretto",
+      "falsenum": "Numero errato",
+      "title": "Parole che conosci sbagliate"
+    },
+    "langPage": {
+      "title": "Scegli la tua lingua madre",
+      "skip": "Continua"
+    }
+  }

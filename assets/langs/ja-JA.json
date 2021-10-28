@@ -1,0 +1,45 @@
+{
+    "homepage": {
+        "appbar": "ホームページ",
+        "words": "言葉",
+        "memorized": "暗記",
+        "todayadd": "本日追加",
+        "todaymemorized": "今日暗記",
+        "active": "アクティブ",
+        "passive": "パッシブ",
+        "addword": "単語を追加",
+        "quiz": "クイズ",
+        "edit": "編集",
+        "delete": "削除",
+        "message1": "アクティブな単語は4つ以上必要です",
+        "message2": "正常に削除されました"
+    },
+    "editdata": {
+        "appbar": "ワードアップグレード",
+        "input1": "単語",
+        "input2": "同等",
+        "save": "保存",
+        "error1": "これは空にすることはできません",
+        "error2": "3文字以上にする必要があります...",
+        "error3": "この名前が存在します。",
+        "appbar1": "単語を追加"
+    },
+    "quiz": {
+        "appbar": "クイズ",
+        "word": "Word",
+        "input": "同等",
+        "skip": "次へ",
+        "error": "これは空にすることはできません",
+        "final": "終了"
+    },
+    "quizFinal": {
+        "appbar": "あなたの試験結果",
+        "truenum": "正しい番号",
+        "falsenum": "間違った番号",
+        "title": "あなたが間違っていることを知っている言葉"
+    },
+    "langPage": {
+        "title": "母国語を選択してください",
+        "skip": "続行"
+    }
+}

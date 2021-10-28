@@ -1,0 +1,45 @@
+{
+    "homepage": {
+      "appbar": "홈 페이지",
+      "words" : "단어",
+      "memorized": "기억됨",
+      "todayadd" : "오늘 추가됨",
+      "todaymemorized" : "오늘 암기",
+      "active" : "활성",
+      "passive" : "패시브",
+      "addword" : "단어 추가",
+      "quiz" : "퀴즈",
+      "edit" : "편집",
+      "delete" : "삭제",
+      "message1": "최소 4개의 활성 단어가 있어야 합니다.",
+      "message2" : "삭제 성공"
+    },
+    "editdata" : {
+      "appbar": "단어 업데이트",
+      "input1" : "단어",
+      "input2" : "동등한",
+      "save" : "저장",
+      "error1": "비워둘 수 없습니다.",
+      "error2" : "3자 미만일 수 없습니다...",
+      "error3": "이 이름이 존재합니다.",
+      "appbar1" : "단어 추가"
+    },
+    "quiz" : {
+      "appbar": "퀴즈",
+      "word" : "단어",
+      "input" : "동등한",
+      "skip" : "다음",
+      "error": "비워둘 수 없습니다.",
+      "final" : "마침"
+    },
+    "quizFinal" : {
+      "appbar": "시험 결과",
+      "truenum" : "올바른 숫자",
+      "falsenum": "잘못된 번호",
+      "title" : "잘못 알고 있는 단어"
+    },
+    "langPage" : {
+      "title": "모국어 선택",
+      "skip" : "계속"
+    }
+  }

@@ -1,15 +1,22 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class LangPage extends StatefulWidget {
-  LangPage({Key? key}) : super(key: key);
+import 'homepage.dart';
 
+class LangPage extends StatefulWidget {
+  String lang;
+  LangPage(this.lang);
   @override
-  _LangPageState createState() => _LangPageState();
+  _LangPageState createState() => _LangPageState(lang);
 }
 
 class _LangPageState extends State<LangPage> {
+  String? lang;
+  _LangPageState(this.lang);
   @override
   void initState() {
     super.initState();
@@ -17,10 +24,104 @@ class _LangPageState extends State<LangPage> {
   }
 
   Color colors = Color(0XFF373852);
-  String _value = "tr";
   Object val = -1;
+  List<Map<String, String>> allLang = [
+    {
+      "id": "l1",
+      "title": "Türkçe",
+      "lang": "tr",
+      "elang": "TR",
+      "img": "assets/flag/tr.png"
+    },
+    {
+      "id": "l1",
+      "title": "Azerice",
+      "lang": "az",
+      "elang": "AZ",
+      "img": "assets/flag/az.png"
+    },
+    {
+      "id": "l1",
+      "title": "English",
+      "lang": "en",
+      "elang": "US",
+      "img": "assets/flag/en.png"
+    },
+    {
+      "id": "l1",
+      "title": "Deutsch",
+      "lang": "de",
+      "elang": "DE",
+      "img": "assets/flag/de.png"
+    },
+    {
+      "id": "l1",
+      "title": "Français",
+      "lang": "fr",
+      "elang": "FR",
+      "img": "assets/flag/fr.png"
+    },
+    {
+      "id": "l1",
+      "title": "हिंदी",
+      "lang": "hi",
+      "elang": "IN",
+      "img": "assets/flag/hi.png"
+    },
+    {
+      "id": "l1",
+      "title": "شبه الجزيرة العربية",
+      "lang": "ar",
+      "elang": "AR",
+      "img": "assets/flag/ar.png"
+    },
+    {
+      "id": "l1",
+      "title": "Ελληνικά",
+      "lang": "el",
+      "elang": "EL",
+      "img": "assets/flag/el.png"
+    },
+    {
+      "id": "l1",
+      "title": "Español",
+      "lang": "es",
+      "elang": "ES",
+      "img": "assets/flag/es.png"
+    },
+    {
+      "id": "l1",
+      "title": "Italiano",
+      "lang": "it",
+      "elang": "IT",
+      "img": "assets/flag/it.png"
+    },
+    {
+      "id": "l1",
+      "title": "日本",
+      "lang": "ja",
+      "elang": "JA",
+      "img": "assets/flag/ja.png"
+    },
+    {
+      "id": "l1",
+      "title": "한국인",
+      "lang": "ko",
+      "elang": "KO",
+      "img": "assets/flag/ko.png"
+    },
+    {
+      "id": "l1",
+      "title": "Pусский",
+      "lang": "ru",
+      "elang": "RU",
+      "img": "assets/flag/ru.png"
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
+    String _value = lang!;
     EasyLocalization.of(context);
     return Scaffold(
       backgroundColor: Color(0XFF373852),
@@ -34,273 +135,104 @@ class _LangPageState extends State<LangPage> {
           textAlign: TextAlign.center,
         )),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            margin: EdgeInsets.all(10),
-            child: Text("langPage.title".tr(),
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 17,
-                    fontWeight: FontWeight.w700)),
-          ),
-          ListBody(
-            children: [
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _value = "tr";
-                  });
-                  context.locale = Locale("tr", "TR");
-                },
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        height: 65,
-                        child: ListTile(
-                            leading: Image.network(
-                              'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Flag_of_the_Ottoman_Empire_%281844%E2%80%931922%29.svg/200px-Flag_of_the_Ottoman_Empire_%281844%E2%80%931922%29.svg.png',
-                              width: 50,
-                            ),
-                            title: Text("Türkçe",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.w700)),
-                            trailing: Padding(
-                              padding: const EdgeInsets.only(right: 15),
-                              child: Visibility(
-                                visible: _value == "tr" ? true : false,
-                                child: Icon(
-                                  Icons.check_sharp,
-                                  color: Colors.white,
-                                  size: 25,
-                                ),
-                              ),
-                            )),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _value = "en";
-                  });
-                  context.locale = Locale("en", "US");
-                },
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        height: 65,
-                        child: ListTile(
-                            leading: Image.network(
-                              'https://www.bayraklar.info/data/flags/ultra/gb.png',
-                              width: 50,
-                            ),
-                            title: Text("English",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.w700)),
-                            trailing: Padding(
-                              padding: const EdgeInsets.only(right: 15),
-                              child: Visibility(
-                                visible: _value == "en" ? true : false,
-                                child: Icon(
-                                  Icons.check_sharp,
-                                  color: Colors.white,
-                                  size: 25,
-                                ),
-                              ),
-                            )),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _value = "de";
-                  });
-                  context.locale = Locale("de", "DE");
-                },
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        height: 65,
-                        child: ListTile(
-                            leading: Image.network(
-                              'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/200px-Flag_of_Germany.svg.png',
-                              width: 50,
-                            ),
-                            title: Text("Deutsch",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.w700)),
-                            trailing: Padding(
-                              padding: const EdgeInsets.only(right: 15),
-                              child: Visibility(
-                                visible: _value == "de" ? true : false,
-                                child: Icon(
-                                  Icons.check_sharp,
-                                  color: Colors.white,
-                                  size: 25,
-                                ),
-                              ),
-                            )),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _value = "fr";
-                  });
-                  context.locale = Locale("fr", "FR");
-                },
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        height: 65,
-                        child: ListTile(
-                            leading: Image.network(
-                              'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/200px-Flag_of_France.svg.png',
-                              width: 50,
-                            ),
-                            title: Text("Français",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.w700)),
-                            trailing: Padding(
-                              padding: const EdgeInsets.only(right: 15),
-                              child: Visibility(
-                                visible: _value == "fr" ? true : false,
-                                child: Icon(
-                                  Icons.check_sharp,
-                                  color: Colors.white,
-                                  size: 25,
-                                ),
-                              ),
-                            )),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _value = "hi";
-                  });
-                  context.locale = Locale("hi", "IN");
-                },
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        height: 65,
-                        child: ListTile(
-                            leading: Image.network(
-                              'https://i.pinimg.com/originals/a7/16/5b/a7165b8b5c8dceca0582eb2217055644.gif',
-                              width: 50,
-                            ),
-                            title: Text("हिंदी",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.w700)),
-                            trailing: Padding(
-                              padding: const EdgeInsets.only(right: 15),
-                              child: Visibility(
-                                visible: _value == "hi" ? true : false,
-                                child: Icon(
-                                  Icons.check_sharp,
-                                  color: Colors.white,
-                                  size: 25,
-                                ),
-                              ),
-                            )),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _value = "ar";
-                  });
-                  context.locale = Locale("ar", "AR");
-                },
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        height: 65,
-                        child: ListTile(
-                            leading: Image.network(
-                              'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/800px-Flag_of_Saudi_Arabia.svg.png',
-                              width: 50,
-                            ),
-                            title: Text("شبه الجزيرة العربية",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.w700)),
-                            trailing: Padding(
-                              padding: const EdgeInsets.only(right: 15),
-                              child: Visibility(
-                                visible: _value == "ar" ? true : false,
-                                child: Icon(
-                                  Icons.check_sharp,
-                                  color: Colors.white,
-                                  size: 25,
-                                ),
-                              ),
-                            )),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          Expanded(
-            child: Align(
-              alignment: FractionalOffset.bottomCenter,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SizedBox(
-                  height: 55,
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary: Colors.orange),
-                    onPressed: () {
-                      Navigator.popUntil(context, (route) => route.isFirst);
+      body: Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              margin: EdgeInsets.all(10),
+              child: Text("langPage.title".tr(),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w700)),
+            ),
+            Container(
+              height: 600,
+              child: ListView.builder(
+                itemCount: allLang.length,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () async {
+                      SharedPreferences pref =
+                          await SharedPreferences.getInstance();
+                      pref.setString("lang", allLang[index]["lang"]!);
+                      _langData();
+                      setState(() {
+                        _value = allLang[index]["lang"]!;
+                      });
+                      context.locale = Locale(
+                          allLang[index]["lang"]!, allLang[index]["elang"]!);
                     },
-                    child: Text("langPage.skip".tr(),
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 17,
-                            fontWeight: FontWeight.w700)),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            height: 65,
+                            child: ListTile(
+                                leading: Image(
+                                  image: AssetImage(allLang[index]["img"]!),
+                                  width: 50,
+                                ),
+                                title: Text(allLang[index]["title"]!,
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w700)),
+                                trailing: Padding(
+                                  padding: const EdgeInsets.only(right: 15),
+                                  child: Visibility(
+                                    visible: _value == allLang[index]["lang"]!
+                                        ? true
+                                        : false,
+                                    child: Icon(
+                                      Icons.check_sharp,
+                                      color: Colors.white,
+                                      size: 25,
+                                    ),
+                                  ),
+                                )),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+            Container(
+              child: Expanded(
+                child: Align(
+                  alignment: FractionalOffset.bottomCenter,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      height: 55,
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(primary: Colors.orange),
+                        onPressed: () {
+                          if (Navigator.canPop(context)) {
+                            Navigator.pop(context);
+                          } else {
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (context) => HomePage()));
+                          }
+                        },
+                        child: Text("langPage.skip".tr(),
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 17,
+                                fontWeight: FontWeight.w700)),
+                      ),
+                    ),
                   ),
                 ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
@@ -309,4 +241,10 @@ class _LangPageState extends State<LangPage> {
     SharedPreferences pref = await SharedPreferences.getInstance();
     pref.setInt("key", 1);
   }
+
+  void _langData() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    lang = pref.getString("lang");
+  }
 }
+//Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/800px-Flag_of_Saudi_Arabia.svg.png',width: 50,),

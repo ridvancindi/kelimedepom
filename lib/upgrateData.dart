@@ -213,6 +213,7 @@ class _upgrateDataState extends State<upgrateData> {
   void _upgrateData(Data data, String name) async {
     var sonuc = await _databaseHelper!.dataUpgrate(data, name);
     if (sonuc != 0) {
+      print("1");
       Navigator.of(context).pop(true);
     } else {
       error = sonuc;

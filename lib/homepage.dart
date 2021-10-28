@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   List<Data>? data;
   String? _createdDate;
+  String? lang;
   int? number;
   String? _upgrateDate;
   TabController? tabController;
@@ -42,16 +43,15 @@ class _HomePageState extends State<HomePage>
     //localNotifyManager.setOnNotificationClick(onNotificationClick);
     _databaseHelper = DbHelper();
     tabController = TabController(length: 2, vsync: this);
-    _veriGetir().then((value){
-      if (number == null) {
-        print("gelen veri boş");
-        Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LangPage()),
-                );
-      }print(number);  
-    });
-    
+    // _veriGetir().then((value){
+    //   if (number == null) {
+    //     print("gelen veri boş");
+    //     Navigator.push(
+    //               context,
+    //               MaterialPageRoute(builder: (context) => LangPage(lang!)),
+    //             );
+    //   }
+    // });
   }
 
   // onNotificationReceive(ReceiveNotification notification) {
@@ -64,6 +64,7 @@ class _HomePageState extends State<HomePage>
   // }
   @override
   Widget build(BuildContext context) {
+    _lang();
     DateTime now = DateTime.now();
     _createdDate = DateFormat('dd-MM-yyyy').format(now);
     _upgrateDate = DateFormat('dd-MM-yyyy').format(now);
@@ -76,20 +77,19 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       key: _scaffoldkey,
       appBar: AppBar(
-         actions: [
-           Container(
-               margin: EdgeInsets.only(right: 15),
-               child: IconButton(
-                 onPressed: () async {
-                    Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LangPage()),
-                );
-                 },
-                 icon: Icon(Icons.settings),
-                 color: Colors.white,
-               ))
-         ],
+        actions: [
+          Container(
+              margin: EdgeInsets.only(right: 15),
+              child: IconButton(
+                onPressed: () async {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => LangPage(lang!)),
+                  );
+                },
+                icon: Icon(Icons.settings),
+                color: Colors.white,
+              ))
+        ],
         title: Text(
           "homepage.appbar".tr(),
           style: TextStyle(color: Colors.white),
@@ -285,7 +285,7 @@ class _HomePageState extends State<HomePage>
                                   height: 10,
                                 ),
                                 Text(
-                                 "homepage.todayadd".tr(),
+                                  "homepage.todayadd".tr(),
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                       fontSize: 13,
@@ -340,7 +340,7 @@ class _HomePageState extends State<HomePage>
                                 fontSize: 16, fontWeight: FontWeight.w800),
                             tabs: [
                               Tab(
-                                text:"homepage.active".tr(),
+                                text: "homepage.active".tr(),
                               ),
                               Tab(
                                 text: "homepage.passive".tr(),
@@ -463,7 +463,8 @@ class _HomePageState extends State<HomePage>
                                                               if (result) {}
                                                             },
                                                             child: Text(
-                                                              "homepage.edit".tr(),
+                                                              "homepage.edit"
+                                                                  .tr(),
                                                               style: TextStyle(
                                                                   color: Colors
                                                                       .white),
@@ -483,7 +484,9 @@ class _HomePageState extends State<HomePage>
                                                                       .id,
                                                                   index);
                                                             },
-                                                            child: Text("homepage.delete".tr(),
+                                                            child: Text(
+                                                                "homepage.delete"
+                                                                    .tr(),
                                                                 style: TextStyle(
                                                                     color: Colors
                                                                         .white)))
@@ -617,7 +620,9 @@ class _HomePageState extends State<HomePage>
                                                               data![index].id,
                                                               index);
                                                         },
-                                                        child: Text("homepage.delete".tr(),
+                                                        child: Text(
+                                                            "homepage.delete"
+                                                                .tr(),
                                                             style: TextStyle(
                                                                 color: Colors
                                                                     .white)))
@@ -704,12 +709,18 @@ class _HomePageState extends State<HomePage>
       // ),
     );
   }
-  
-  Future<String> _veriGetir() async {
+
+  // Future<String> _veriGetir() async {
+  //   SharedPreferences pref = await SharedPreferences.getInstance();
+  //   number = pref.getInt("key");
+  //   return "Tamamlandı";
+  // }
+  Future<String> _lang() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
-    number = pref.getInt("key");
+    lang = pref.getString("lang");
     return "Tamamlandı";
   }
+
   void getData() {
     int _pasif = 0;
     int _addDaily = 0;

@@ -1,0 +1,45 @@
+{
+    "homepage": {
+      "appbar": "Ana Səhifə",
+      "words": "Sözlər",
+      "memorized": "Yadda saxlanılır",
+      "todayadd": "Bu gün əlavə edildi",
+      "todaymemorized": "Bu gün yadda saxlanılır",
+      "active": "Aktivlər",
+      "passive": "Passivlər",
+      "addword": "Söz əlavə et",
+      "quiz": "Viktorina",
+      "edit": "Redaktə et",
+      "delete": "Sil",
+      "message1": "Minimum 4 Aktiv Sözünüz Olmalıdır",
+      "message2": "Uğurla Silindi"
+    },
+    "editdata": {
+      "appbar": "Söz Yeniləmə",
+      "input1": "Söz",
+      "input2": "Ekvivalent",
+      "save": "Saxla",
+      "error1": "Bu boş ola bilməz",
+      "error2": "3 simvoldan az ola bilməz ...",
+      "error3": "Bu Ad Var.",
+      "appbar1": "Söz əlavə et"
+    },
+    "quiz": {
+      "appbar": "Viktorina",
+      "word": "Söz",
+      "input": "Ekvivalent",
+      "skip": "Sonrakı",
+      "error": "Bu boş ola bilməz",
+      "final": "Bitir"
+    },
+    "quizFinal": {
+      "appbar": "İmtahan Nəticəniz",
+      "truenum": "Düzgün nömrə",
+      "falsenum": "Yanlış nömrə",
+      "title": "Səhv bildiyiniz sözlər"
+    },
+    "langPage": {
+      "title": "Ana dilinizi seçin",
+      "skip": "Davam et"
+    }
+  }

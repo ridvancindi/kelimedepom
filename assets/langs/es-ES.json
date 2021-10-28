@@ -1,0 +1,45 @@
+{
+    "homepage": {
+      "appbar": "Página de inicio",
+      "words": "Las palabras",
+      "memorized": "Memorizado",
+      "todayadd": "Agregado hoy",
+      "todaymemorized": "Memorizado hoy",
+      "active": "Activos",
+      "passive": "Pasivos",
+      "addword": "Agregar palabra",
+      "quiz": "Prueba",
+      "edit": "Editar",
+      "delete": "Eliminar",
+      "message1": "Debe tener un mínimo de 4 palabras activas",
+      "message2": "Eliminado correctamente"
+    },
+    "editdata": {
+      "appbar": "Actualización de Word",
+      "input1": "Palabra",
+      "input2": "Equivalente",
+      "save": "Guardar",
+      "error1": "Esto no puede estar vacío",
+      "error2": "No puede tener menos de 3 caracteres ...",
+      "error3": "Este nombre existe",
+      "appbar1": "Agregar palabra"
+    },
+    "quiz": {
+      "appbar": "Prueba",
+      "word": "Palabra",
+      "input": "Equivalente",
+      "skip": "Siguiente",
+      "error": "Esto no puede estar vacío",
+      "final": "Finalizar"
+    },
+    "quizFinal": {
+      "appbar": "Resultado de su examen",
+      "truenum": "Número correcto",
+      "falsenum": "Número incorrecto",
+      "title": "Palabras que no conoce"
+    },
+    "langPage": {
+      "title": "Elija su idioma nativo",
+      "skip": "Continuar"
+    }
+  }
