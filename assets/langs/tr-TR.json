@@ -12,7 +12,8 @@
     "edit" : "Düzenle",
     "delete" : "Sil",
     "message1" : "Minimum 4 Tane Aktif Kelimeniz Bulunmalı",
-    "message2" : "Başarıyla Silindi"
+    "message2" : "Başarıyla Silindi",
+    "question" : "Sorular"
   },
   "editdata" : {
     "appbar": "Kelime Güncelleme",

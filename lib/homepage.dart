@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:intl/intl.dart';
 import 'package:kelimedepom/langpage.dart';
+import 'package:kelimedepom/questionPage.dart';
 import 'package:kelimedepom/quiz.dart';
 import 'package:kelimedepom/upgrateData.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -675,6 +676,31 @@ class _HomePageState extends State<HomePage>
                 bool? result = await Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => QuizPage(data!)),
+                );
+                if (result == true) {
+                  getData();
+                } else if (result == null) {
+                  getData();
+                }
+              } else {
+                _scaffoldkey.currentState!.showSnackBar(SnackBar(
+                  content: Text("homepage.message1".tr()),
+                  duration: Duration(seconds: 2),
+                ));
+              }
+            },
+          ),
+          SpeedDialChild(
+            backgroundColor: Colors.red,
+            foregroundColor: Colors.white,
+            child: Icon(Icons.question_answer),
+            label: "homepage.question".tr(),
+            onTap: () async {
+              if (data!.length - pasif >= 4) {
+                setState(() {});
+                bool? result = await Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => questionPage()),
                 );
                 if (result == true) {
                   getData();
