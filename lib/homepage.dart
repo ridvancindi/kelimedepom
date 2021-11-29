@@ -743,7 +743,9 @@ class _HomePageState extends State<HomePage>
   // }
   Future<String> _lang() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
-    lang = pref.getString("lang");
+    setState(() {
+      lang = pref.getString("lang");
+    });
     return "Tamamlandı";
   }
 

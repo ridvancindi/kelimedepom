@@ -34,6 +34,7 @@ class DbHelper {
 
   Future<Database> initializeDatabase() async {
     Directory klasor = await getApplicationDocumentsDirectory();
+    print("data path ${klasor.path}");
     String dbpath = join(klasor.path, "data.db");
     var dataDb = openDatabase(dbpath, version: 1, onCreate: _createDb);
     return dataDb;
