@@ -136,102 +136,108 @@ class _LangPageState extends State<LangPage> {
         )),
       ),
       body: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              margin: EdgeInsets.all(10),
-              child: Text("langPage.title".tr(),
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 17,
-                      fontWeight: FontWeight.w700)),
-            ),
-            Container(
-              height: 600,
-              child: ListView.builder(
-                itemCount: allLang.length,
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () async {
-                      SharedPreferences pref =
-                          await SharedPreferences.getInstance();
-                      pref.setString("lang", allLang[index]["lang"]!);
-                      _langData();
-                      setState(() {
-                        _value = allLang[index]["lang"]!;
-                      });
-                      context.locale = Locale(
-                          allLang[index]["lang"]!, allLang[index]["elang"]!);
-                    },
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            height: 65,
-                            child: ListTile(
-                                leading: Image(
-                                  image: AssetImage(allLang[index]["img"]!),
-                                  width: 50,
-                                ),
-                                title: Text(allLang[index]["title"]!,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 17,
-                                        fontWeight: FontWeight.w700)),
-                                trailing: Padding(
-                                  padding: const EdgeInsets.only(right: 15),
-                                  child: Visibility(
-                                    visible: _value == allLang[index]["lang"]!
-                                        ? true
-                                        : false,
-                                    child: Icon(
-                                      Icons.check_sharp,
-                                      color: Colors.white,
-                                      size: 25,
-                                    ),
-                                  ),
-                                )),
+        child: ListView.builder(
+          itemCount: allLang.length,
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () async {
+                SharedPreferences pref = await SharedPreferences.getInstance();
+                pref.setString("lang", allLang[index]["lang"]!);
+                _langData();
+                setState(() {
+                  _value = allLang[index]["lang"]!;
+                });
+                context.locale =
+                    Locale(allLang[index]["lang"]!, allLang[index]["elang"]!);
+              },
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 65,
+                      child: ListTile(
+                          leading: Image(
+                            image: AssetImage(allLang[index]["img"]!),
+                            width: 50,
                           ),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            ),
-            Container(
-              child: Expanded(
-                child: Align(
-                  alignment: FractionalOffset.bottomCenter,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SizedBox(
-                      height: 55,
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(primary: Colors.orange),
-                        onPressed: () {
-                          if (Navigator.canPop(context)) {
-                            Navigator.pop(context);
-                          } else {
-                            Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(
-                                    builder: (context) => HomePage()));
-                          }
-                        },
-                        child: Text("langPage.skip".tr(),
-                            style: TextStyle(
+                          title: Text(allLang[index]["title"]!,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w700)),
+                          trailing: Padding(
+                            padding: const EdgeInsets.only(right: 15),
+                            child: Visibility(
+                              visible: _value == allLang[index]["lang"]!
+                                  ? true
+                                  : false,
+                              child: Icon(
+                                Icons.check_sharp,
                                 color: Colors.white,
-                                fontSize: 17,
-                                fontWeight: FontWeight.w700)),
-                      ),
+                                size: 25,
+                              ),
+                            ),
+                          )),
                     ),
                   ),
-                ),
+                ],
               ),
-            )
-          ],
+            );
+          },
+        ),
+        // Container(
+        //   child: Expanded(
+        //     child: Align(
+        //       alignment: FractionalOffset.bottomCenter,
+        //       child: Padding(
+        //         padding: const EdgeInsets.all(8.0),
+        //         child: SizedBox(
+        //           height: 55,
+        //           width: double.infinity,
+        //           child: ElevatedButton(
+        //             style:
+        //                 ElevatedButton.styleFrom(primary: Colors.orange),
+        //             onPressed: () {
+        //               if (Navigator.canPop(context)) {
+        //                 Navigator.pop(context);
+        //               } else {
+        //                 Navigator.of(context).pushReplacement(
+        //                     MaterialPageRoute(
+        //                         builder: (context) => HomePage()));
+        //               }
+        //             },
+        //             child: Text("langPage.skip".tr(),
+        //                 style: TextStyle(
+        //                     color: Colors.white,
+        //                     fontSize: 17,
+        //                     fontWeight: FontWeight.w700)),
+        //           ),
+        //         ),
+        //       ),
+        //     ),
+        //   ),
+        // )
+      ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.all(8.0),
+        child: Container(
+          height: 45,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(primary: Colors.orange),
+            onPressed: () {
+              if (Navigator.canPop(context)) {
+                Navigator.pop(context);
+              } else {
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => HomePage()));
+              }
+            },
+            child: Text("langPage.skip".tr(),
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w700)),
+          ),
         ),
       ),
     );

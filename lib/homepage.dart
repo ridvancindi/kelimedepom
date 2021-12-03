@@ -8,7 +8,6 @@ import 'package:kelimedepom/quiz.dart';
 import 'package:kelimedepom/upgrateData.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'Notification.dart';
 import 'addData.dart';
 import 'db/dbHelper.dart';
 import 'models/data.dart';
@@ -25,7 +24,7 @@ class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   List<Data>? data;
   String? _createdDate;
-  String? lang;
+  String? lang = "tr";
   int? number;
   String? _upgrateDate;
   TabController? tabController;
@@ -40,6 +39,7 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     super.initState();
+    _lang();
     //localNotifyManager.setOnNotificationRecive(onNotificationReceive);
     //localNotifyManager.setOnNotificationClick(onNotificationClick);
     _databaseHelper = DbHelper();
@@ -742,9 +742,11 @@ class _HomePageState extends State<HomePage>
   //   return "Tamamlandı";
   // }
   Future<String> _lang() async {
+    String? _lang;
     SharedPreferences pref = await SharedPreferences.getInstance();
     setState(() {
-      lang = pref.getString("lang");
+      _lang = pref.getString("lang");
+      lang = _lang;
     });
     return "Tamamlandı";
   }
