@@ -1,12 +1,29 @@
 import 'dart:io';
+
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+
 class AdHelper {
-  static String get bannerAdUnitId {
-    if (Platform.isAndroid) {
-      return 'ca-app-pub-4315903975362102/2975171291';
-    } else if (Platform.isIOS) {
-      return 'ca-app-pub-4315903975362102/5144151598';
-    } else {
-      throw UnsupportedError("unsupported Platform");
+  static String get bannerAdUnitId => Platform.isAndroid
+      ? 'ca-app-pub-3940256099942544/6300978111'
+      : 'ca-app-pub-3940256099942544/6300978111';
+  static initialize() {
+    if (MobileAds.instance == null) {
+      MobileAds.instance.initialize();
     }
+  }
+
+  static BannerAd createBannerAd() {
+    BannerAd ad = new BannerAd(
+        size: AdSize.banner,
+        adUnitId: bannerAdUnitId,
+        listener: BannerAdListener(
+            onAdLoaded: (Ad ad) => print('Ad loaded'),
+            onAdFailedToLoad: (Ad ad, LoadAdError error) {
+              ad.dispose();
+            },
+            onAdOpened: (Ad ad) => print('Ad Opened'),
+            onAdClosed: (Ad ad) => print('Ad Closed')),
+        request: AdRequest());
+    return ad;
   }
 }

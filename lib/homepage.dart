@@ -1,7 +1,9 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:intl/intl.dart';
+import 'package:kelimedepom/admobHelper.dart';
 import 'package:kelimedepom/langpage.dart';
 import 'package:kelimedepom/questionPage.dart';
 import 'package:kelimedepom/quiz.dart';
@@ -40,29 +42,10 @@ class _HomePageState extends State<HomePage>
   void initState() {
     super.initState();
     _lang();
-    //localNotifyManager.setOnNotificationRecive(onNotificationReceive);
-    //localNotifyManager.setOnNotificationClick(onNotificationClick);
     _databaseHelper = DbHelper();
     tabController = TabController(length: 2, vsync: this);
-    // _veriGetir().then((value){
-    //   if (number == null) {
-    //     print("gelen veri boş");
-    //     Navigator.push(
-    //               context,
-    //               MaterialPageRoute(builder: (context) => LangPage(lang!)),
-    //             );
-    //   }
-    // });
   }
 
-  // onNotificationReceive(ReceiveNotification notification) {
-  //   print("Notifacation Received ");
-  // }
-
-  // onNotificationClick(String payload)
-  // {
-  //   print("$payload");
-  // }
   @override
   Widget build(BuildContext context) {
     _lang();
@@ -334,6 +317,7 @@ class _HomePageState extends State<HomePage>
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Container(
+                        height: 50,
                         child: TabBar(
                             controller: tabController,
                             labelColor: Colors.black,

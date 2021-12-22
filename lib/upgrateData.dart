@@ -15,8 +15,6 @@ class upgrateData extends StatefulWidget {
 
 class _upgrateDataState extends State<upgrateData> {
   Data? data;
-  late BannerAd _bannerAd;
-  bool _isBanneradReady = false;
   _upgrateDataState(this.data);
   var _kelime = TextEditingController();
   var _karsilik = TextEditingController();
@@ -38,26 +36,20 @@ class _upgrateDataState extends State<upgrateData> {
     }).catchError((hata) => print("Hata $hata"));
     _kelime.text = data!.kelime;
     _karsilik.text = data!.karsilik;
-    _bannerAd = BannerAd(
-        size: AdSize.mediumRectangle,
-        adUnitId: AdHelper.bannerAdUnitId,
-        listener: BannerAdListener(onAdLoaded: (_) {
-          setState(() {
-            _isBanneradReady = true;
-          });
-        }, onAdFailedToLoad: (ad, error) {
-          print("Error = ${error.message}");
-          _isBanneradReady = false;
-          ad.dispose();
-        }),
-        request: AdRequest())
-      ..load();
-  }
-
-  @override
-  void dispose() {
-    _bannerAd.dispose();
-    super.dispose();
+    // _bannerAd = BannerAd(
+    //     size: AdSize.mediumRectangle,
+    //     adUnitId: AdHelper.bannerAdUnitId,
+    //     listener: BannerAdListener(onAdLoaded: (_) {
+    //       setState(() {
+    //         _isBanneradReady = true;
+    //       });
+    //     }, onAdFailedToLoad: (ad, error) {
+    //       print("Error = ${error.message}");
+    //       _isBanneradReady = false;
+    //       ad.dispose();
+    //     }),
+    //     request: AdRequest())
+    //   ..load();
   }
 
   @override
@@ -179,31 +171,30 @@ class _upgrateDataState extends State<upgrateData> {
                               style: TextStyle(color: Colors.white),
                             ),
                             onPressed: () {
-                              setState(() {
-                                if (_formKey.currentState!.validate()) {
-                                  _upgrateData(
-                                      Data.withId(
-                                          data!.id,
-                                          _kelime.text,
-                                          _karsilik.text,
-                                          1,
-                                          data!.createdDate,
-                                          data!.upgrateDate),
-                                      _kelime.text);
-                                } else {}
-                              });
+                              if (_formKey.currentState!.validate()) {
+                                _upgrateData(
+                                    Data.withId(
+                                        data!.id,
+                                        _kelime.text,
+                                        _karsilik.text,
+                                        1,
+                                        data!.createdDate,
+                                        data!.upgrateDate),
+                                    _kelime.text);
+                              } else {}
                             }),
                       ),
                     ),
                     SizedBox(
                       height: 15,
                     ),
-                    if (_isBanneradReady == true)
-                      Container(
-                        width: _bannerAd.size.width.toDouble(),
-                        height: _bannerAd.size.height.toDouble(),
-                        child: AdWidget(ad: _bannerAd),
-                      )
+                    Container(
+                        height: 60,
+                        alignment: Alignment.center,
+                        child: AdWidget(
+                          key: UniqueKey(),
+                          ad: AdHelper.createBannerAd()..load(),
+                        ))
                   ],
                 ),
               ),
