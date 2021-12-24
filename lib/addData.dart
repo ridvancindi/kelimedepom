@@ -185,14 +185,12 @@ class _addDataState extends State<addData> {
                             style: TextStyle(color: Colors.white),
                           ),
                           onPressed: () {
-                            setState(() {
-                              if (_formKey.currentState!.validate()) {
-                                addData(
-                                    Data(_name.text, _surname.text, 1,
-                                        _createdDate, null),
-                                    _name.text);
-                              } else {}
-                            });
+                            if (_formKey.currentState!.validate()) {
+                              addData(
+                                  Data(_name.text, _surname.text, 1,
+                                      _createdDate, null),
+                                  _name.text);
+                            } else {}
                           }),
                     ),
                   ),
@@ -214,7 +212,6 @@ class _addDataState extends State<addData> {
 
   void addData(Data data, String name) async {
     var addNewData = await _databaseHelper!.addData(data, name);
-    print(addNewData.toString());
     if (addNewData != 0) {
       Navigator.of(context).pop(true);
     } else {

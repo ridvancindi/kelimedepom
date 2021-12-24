@@ -38,6 +38,8 @@ class _HomePageState extends State<HomePage>
   DbHelper? _databaseHelper;
   int count = 0;
   int count2 = 0;
+  int currentIndex = 0;
+
   @override
   void initState() {
     super.initState();
@@ -333,7 +335,10 @@ class _HomePageState extends State<HomePage>
                             ]),
                       ),
                       Container(
-                        height: 570,
+                        constraints: BoxConstraints(
+                            minHeight: 100,
+                            minWidth: double.infinity,
+                            maxHeight: 400),
                         child: TabBarView(controller: tabController, children: [
                           Container(
                             child: Column(
@@ -627,80 +632,80 @@ class _HomePageState extends State<HomePage>
           ],
         )),
       ),
-      floatingActionButton: SpeedDial(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        closeManually: true,
-        animatedIcon: AnimatedIcons.menu_close,
-        children: [
-          SpeedDialChild(
-            backgroundColor: Colors.blue,
-            foregroundColor: Colors.white,
-            child: Icon(Icons.add),
-            label: "homepage.addword".tr(),
-            onTap: () async {
-              setState(() {});
-              bool result = await Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => addData()),
-              );
-              if (result) {
-                getData();
-              }
-            },
-          ),
-          SpeedDialChild(
-            backgroundColor: Colors.green,
-            foregroundColor: Colors.white,
-            child: Icon(Icons.receipt_long_rounded),
-            label: "homepage.quiz".tr(),
-            onTap: () async {
-              if (data!.length - pasif >= 4) {
-                setState(() {});
-                bool? result = await Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => QuizPage(data!)),
-                );
-                if (result == true) {
-                  getData();
-                } else if (result == null) {
-                  getData();
-                }
-              } else {
-                _scaffoldkey.currentState!.showSnackBar(SnackBar(
-                  content: Text("homepage.message1".tr()),
-                  duration: Duration(seconds: 2),
-                ));
-              }
-            },
-          ),
-          SpeedDialChild(
-            backgroundColor: Colors.red,
-            foregroundColor: Colors.white,
-            child: Icon(Icons.question_answer),
-            label: "homepage.question".tr(),
-            onTap: () async {
-              if (data!.length - pasif >= 4) {
-                setState(() {});
-                bool? result = await Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => questionPage()),
-                );
-                if (result == true) {
-                  getData();
-                } else if (result == null) {
-                  getData();
-                }
-              } else {
-                _scaffoldkey.currentState!.showSnackBar(SnackBar(
-                  content: Text("homepage.message1".tr()),
-                  duration: Duration(seconds: 2),
-                ));
-              }
-            },
-          ),
-        ],
-      ),
+      // floatingActionButton: SpeedDial(
+      //   backgroundColor: Colors.deepOrange,
+      //   foregroundColor: Colors.white,
+      //   closeManually: true,
+      //   animatedIcon: AnimatedIcons.menu_close,
+      //   children: [
+      //     SpeedDialChild(
+      //       backgroundColor: Colors.blue,
+      //       foregroundColor: Colors.white,
+      //       child: Icon(Icons.add),
+      //       label: "homepage.addword".tr(),
+      //       onTap: () async {
+      //         setState(() {});
+      //         bool result = await Navigator.push(
+      //           context,
+      //           MaterialPageRoute(builder: (context) => addData()),
+      //         );
+      //         if (result) {
+      //           getData();
+      //         }
+      //       },
+      //     ),
+      //     SpeedDialChild(
+      //       backgroundColor: Colors.green,
+      //       foregroundColor: Colors.white,
+      //       child: Icon(Icons.receipt_long_rounded),
+      //       label: "homepage.quiz".tr(),
+      //       onTap: () async {
+      //         if (data!.length - pasif >= 4) {
+      //           setState(() {});
+      //           bool? result = await Navigator.push(
+      //             context,
+      //             MaterialPageRoute(builder: (context) => QuizPage(data!)),
+      //           );
+      //           if (result == true) {
+      //             getData();
+      //           } else if (result == null) {
+      //             getData();
+      //           }
+      //         } else {
+      //           _scaffoldkey.currentState!.showSnackBar(SnackBar(
+      //             content: Text("homepage.message1".tr()),
+      //             duration: Duration(seconds: 2),
+      //           ));
+      //         }
+      //       },
+      //     ),
+      //     SpeedDialChild(
+      //       backgroundColor: Colors.red,
+      //       foregroundColor: Colors.white,
+      //       child: Icon(Icons.question_answer),
+      //       label: "homepage.question".tr(),
+      //       onTap: () async {
+      //         if (data!.length - pasif >= 4) {
+      //           setState(() {});
+      //           bool? result = await Navigator.push(
+      //             context,
+      //             MaterialPageRoute(builder: (context) => questionPage()),
+      //           );
+      //           if (result == true) {
+      //             getData();
+      //           } else if (result == null) {
+      //             getData();
+      //           }
+      //         } else {
+      //           _scaffoldkey.currentState!.showSnackBar(SnackBar(
+      //             content: Text("homepage.message1".tr()),
+      //             duration: Duration(seconds: 2),
+      //           ));
+      //         }
+      //       },
+      //     ),
+      //   ],
+      // ),
       //FloatingActionButton(
       //   onPressed: () async {
       //     setState(() {});

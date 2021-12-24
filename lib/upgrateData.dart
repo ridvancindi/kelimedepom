@@ -188,13 +188,7 @@ class _upgrateDataState extends State<upgrateData> {
                     SizedBox(
                       height: 15,
                     ),
-                    Container(
-                        height: 60,
-                        alignment: Alignment.center,
-                        child: AdWidget(
-                          key: UniqueKey(),
-                          ad: AdHelper.createBannerAd()..load(),
-                        ))
+                    
                   ],
                 ),
               ),
