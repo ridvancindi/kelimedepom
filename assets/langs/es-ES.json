@@ -12,7 +12,8 @@
       "edit": "Editar",
       "delete": "Eliminar",
       "message1": "Debe tener un mínimo de 4 palabras activas",
-      "message2": "Eliminado correctamente"
+      "message2": "Eliminado correctamente",
+      "test" : "Sorularla Öğrenelim"
     },
     "editdata": {
       "appbar": "Actualización de Word",

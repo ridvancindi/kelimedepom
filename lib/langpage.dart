@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/services.dart';
+import 'package:kelimedepom/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'homepage.dart';
@@ -229,7 +230,7 @@ class _LangPageState extends State<LangPage> {
                 Navigator.pop(context);
               } else {
                 Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => HomePage()));
+                    MaterialPageRoute(builder: (context) => HomePages()));
               }
             },
             child: Text("langPage.skip".tr(),

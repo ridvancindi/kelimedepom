@@ -12,7 +12,8 @@
       "edit" : "يحرر",
       "delete" : "حذف",
       "message1" : "يجب أن يكون لديك على الأقل 4 كلمات نشطة",
-      "message2" : "تم الحذف بنجاح"
+      "message2" : "تم الحذف بنجاح",
+      "test" : "Sorularla Öğrenelim"
     },
     "editdata" : {
       "appbar": "تحديث Word",

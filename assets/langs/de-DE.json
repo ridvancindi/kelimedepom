@@ -12,7 +12,8 @@
       "edit" : "Bearbeiten",
       "delete" : "Löschen",
       "message1": "Sie müssen mindestens 4 aktive Wörter haben",
-      "message2" : "Erfolgreich gelöscht"
+      "message2" : "Erfolgreich gelöscht",
+      "test" : "Sorularla Öğrenelim"
     },
     "editdata" : {
       "appbar": "Word-Update",

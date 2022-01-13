@@ -12,7 +12,8 @@
       "edit" : "Modifier",
       "delete" : "Supprimer",
       "message1" : "Vous devez avoir au moins 4 mots actifs",
-      "message2" : "Supprimé avec succès"
+      "message2" : "Supprimé avec succès",
+      "test" : "Sorularla Öğrenelim"
     },
     "editdata" : {
       "appbar": "Mise à jour Word",

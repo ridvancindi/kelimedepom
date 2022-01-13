@@ -13,7 +13,8 @@
     "delete" : "Delete",
     "message1" : "You Must Have Minimum 4 Active Words",
     "message2" : "Successfully Deleted",
-    "question" : "Sorular"
+    "question" : "Sorular",
+    "test" : "Sorularla Öğrenelim"
   },
   "editdata" : {
     "appbar": "Word Update",

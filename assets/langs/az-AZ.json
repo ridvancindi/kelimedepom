@@ -12,7 +12,8 @@
       "edit": "Redaktə et",
       "delete": "Sil",
       "message1": "Minimum 4 Aktiv Sözünüz Olmalıdır",
-      "message2": "Uğurla Silindi"
+      "message2": "Uğurla Silindi",
+      "test" : "Sorularla Öğrenelim"
     },
     "editdata": {
       "appbar": "Söz Yeniləmə",

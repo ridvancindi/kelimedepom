@@ -20,7 +20,6 @@ class _TestPageState extends State<TestPage>
   List<Data>? data;
   DbHelper? _databaseHelper;
   int pasif = 0;
-  final GlobalKey<ScaffoldState> _scaffoldkey = new GlobalKey<ScaffoldState>();
   int count = 0;
   @override
   void initState() {
@@ -60,10 +59,10 @@ class _TestPageState extends State<TestPage>
                       MaterialPageRoute(builder: (context) => QuizPage(data!)),
                     );
                   } else {
-                    _scaffoldkey.currentState!.showSnackBar(SnackBar(
+                    final snackBar = SnackBar(
                       content: Text("homepage.message1".tr()),
-                      duration: Duration(seconds: 2),
-                    ));
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
                   }
                 },
                 shape: RoundedRectangleBorder(
@@ -100,10 +99,19 @@ class _TestPageState extends State<TestPage>
               height: 60.0,
               child: RaisedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => questionPage(data!)),
-                  );
+                  if (data!.length - pasif >= 4) {
+                    setState(() {});
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => questionPage(data!)),
+                    );
+                  } else {
+                    final snackBar = SnackBar(
+                      content: Text("homepage.message1".tr()),
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  }
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(80.0)),

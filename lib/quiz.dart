@@ -91,8 +91,11 @@ class _QuizPageState extends State<QuizPage> {
         },
         child: Scaffold(
           appBar: AppBar(
-            title: Text("quiz.appbar".tr()),
             automaticallyImplyLeading: false,
+            backgroundColor: Colors.transparent,
+            bottomOpacity: 0.0,
+            elevation: 0.0,
+            title: Center(child: Text("quiz.appbar".tr(), textAlign: TextAlign.center)),
             actions: [
               Container(
                 margin: EdgeInsets.only(right: 15),
@@ -110,6 +113,7 @@ class _QuizPageState extends State<QuizPage> {
               )
             ],
           ),
+          backgroundColor: Color(0xff242a40),
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -118,7 +122,7 @@ class _QuizPageState extends State<QuizPage> {
                 padding: const EdgeInsets.only(left: 20),
                 child: Text(
                   "quiz.word".tr() + ": ${question[id].kelime}",
-                  style: TextStyle(fontSize: 15),
+                  style: TextStyle(fontSize: 15, color: Colors.white),
                 ),
               ),
               SizedBox(height: 30),
@@ -214,7 +218,6 @@ class _QuizPageState extends State<QuizPage> {
               //   )
             ],
           ),
-          
         ));
   }
 

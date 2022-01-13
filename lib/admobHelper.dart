@@ -4,8 +4,8 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class AdHelper {
   static String get bannerAdUnitId => Platform.isAndroid
-      ? 'ca-app-pub-3940256099942544/6300978111'
-      : 'ca-app-pub-3940256099942544/6300978111';
+      ? 'ca-app-pub-4315903975362102/2975171291'
+      : 'ca-app-pub-4315903975362102/2975171291';
   static String get interstitialAdUnitId => Platform.isAndroid
       ? 'ca-app-pub-4315903975362102/4004916971'
       : 'ca-app-pub-4315903975362102/4004916971';

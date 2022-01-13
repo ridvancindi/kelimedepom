@@ -12,7 +12,8 @@
         "edit": "編集",
         "delete": "削除",
         "message1": "アクティブな単語は4つ以上必要です",
-        "message2": "正常に削除されました"
+        "message2": "正常に削除されました",
+        "test" : "Sorularla Öğrenelim"
     },
     "editdata": {
         "appbar": "ワードアップグレード",
