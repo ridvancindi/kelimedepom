@@ -1,26 +1,20 @@
 import 'package:after_layout/after_layout.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:kelimedepom/addData.dart';
 import 'package:kelimedepom/langpage.dart';
-import 'package:kelimedepom/questionPage.dart';
-import 'package:kelimedepom/quiz.dart';
 import 'package:kelimedepom/testpage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'Notification.dart';
-import 'db/dbHelper.dart';
 import 'homepage.dart';
-import 'models/data.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   MobileAds.instance.initialize();
   localNotifyManager.showNightNotification();
-  localNotifyManager.showDayTimeNotification();
-
   runApp(
     EasyLocalization(
         supportedLocales: [
@@ -42,6 +36,23 @@ void main() async {
         fallbackLocale: Locale('tr', 'TR'),
         child: MyApp()),
   );
+  configLoading();
+}
+
+void configLoading() {
+  EasyLoading.instance
+    ..displayDuration = const Duration(milliseconds: 2000)
+    ..indicatorType = EasyLoadingIndicatorType.fadingCircle
+    ..loadingStyle = EasyLoadingStyle.dark
+    ..indicatorSize = 45.0
+    ..radius = 10.0
+    ..progressColor = Colors.white
+    ..backgroundColor = Colors.green
+    ..indicatorColor = Colors.white
+    ..textColor = Colors.white
+    ..maskColor = Colors.red.withOpacity(0.5)
+    ..userInteractions = true
+    ..dismissOnTap = false;
 }
 
 class MyApp extends StatefulWidget {
@@ -53,14 +64,16 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
-        locale: context.locale,
-        theme: ThemeData(
-          primarySwatch: Colors.deepOrange,
-        ),
-        home: FirsScreen());
+      debugShowCheckedModeBanner: false,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      theme: ThemeData(
+        primarySwatch: Colors.deepOrange,
+      ),
+      home: FirsScreen(),
+      builder: EasyLoading.init(),
+    );
   }
 }
 
@@ -117,7 +130,7 @@ class _HomePagesState extends State<HomePages> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             IconButton(
-              color: currentIndex == 0 ? Colors.deepOrange : Colors.black  ,
+              color: currentIndex == 0 ? Colors.deepOrange : Colors.black,
               icon: Icon(
                 Icons.home,
               ),
@@ -130,7 +143,7 @@ class _HomePagesState extends State<HomePages> {
             SizedBox(width: 48.0),
             IconButton(
               iconSize: 25,
-              color: currentIndex == 1 ? Colors.deepOrange : Colors.black  ,
+              color: currentIndex == 1 ? Colors.deepOrange : Colors.black,
               icon: Icon(
                 Icons.library_books,
               ),

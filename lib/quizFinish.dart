@@ -49,6 +49,7 @@ class _quizFinishState extends State<quizFinish> {
             icon: Icon(Icons.chevron_left_rounded)),
         title: Text("quizFinal.appbar".tr()),
       ),
+      backgroundColor: Color(0xff242a40),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -173,7 +174,7 @@ class _quizFinishState extends State<quizFinish> {
                 margin: EdgeInsets.only(left: 15, top: 20),
                 child: Text(
                   "quizFinal.title".tr(),
-                  style: TextStyle(fontSize: 15),
+                  style: TextStyle(fontSize: 15,color: Colors.white),
                 )),
             Container(
               child: Padding(

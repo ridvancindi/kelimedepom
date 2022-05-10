@@ -1,16 +1,10 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:intl/intl.dart';
-import 'package:kelimedepom/admobHelper.dart';
 import 'package:kelimedepom/langpage.dart';
-import 'package:kelimedepom/questionPage.dart';
-import 'package:kelimedepom/quiz.dart';
+import 'package:kelimedepom/testspage.dart';
 import 'package:kelimedepom/upgrateData.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'addData.dart';
 import 'db/dbHelper.dart';
 import 'models/data.dart';
 import 'models/settings.dart';
@@ -68,9 +62,13 @@ class _HomePageState extends State<HomePage>
               margin: EdgeInsets.only(right: 15),
               child: IconButton(
                 onPressed: () async {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => LangPage(lang!)),
-                  );
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
+                             testspages()));
+                  // Navigator.of(context).push(
+                  //   MaterialPageRoute(
+                  //       builder: (context) =>
+                  //           LangPage(lang != null ? lang! : "tr")),
+                  // );
                 },
                 icon: Icon(Icons.settings),
                 color: Colors.white,

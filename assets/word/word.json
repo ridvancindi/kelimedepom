@@ -1,0 +1,192 @@
+{
+    "everyday": [
+        {
+            "word": "hafta",
+            "opposite": "week"
+        },
+        {
+            "word": "yıl",
+            "opposite": "year"
+        },
+        {
+            "word": "bugün",
+            "opposite": "today"
+        },
+        {
+            "word": "yarın",
+            "opposite": "tomorrow"
+        },
+        {
+            "word": "dün",
+            "opposite": "yesterday"
+        },
+        {
+            "word": "takvim",
+            "opposite": "calendar"
+        },
+        {
+            "word": "saniye",
+            "opposite": "second"
+        },
+        {
+            "word": "saat",
+            "opposite": "hour"
+        },
+        {
+            "word": "dakika",
+            "opposite": "minute"
+        },
+        {
+            "word": "saat",
+            "opposite": "clock"
+        },
+        {
+            "word": "yapabilmek",
+            "opposite": "can"
+        },
+        {
+            "word": "kullanmak",
+            "opposite": "use"
+        },
+        {
+            "word": "yapmak",
+            "opposite": "do"
+        },
+        {
+            "word": "gitmek",
+            "opposite": "go"
+        },
+        {
+            "word": "gelmek",
+            "opposite": "come"
+        },
+        {
+            "word": "gülmek",
+            "opposite": "laugh"
+        },
+        {
+            "word": "yapmak",
+            "opposite": "make"
+        },
+        {
+            "word": "görmek",
+            "opposite": "see"
+        },
+        {
+            "word": "uzak",
+            "opposite": "far"
+        },
+        {
+            "word": "küçük",
+            "opposite": "small"
+        },
+        {
+            "word": "iyi",
+            "opposite": "good"
+        },
+        {
+            "word": "güzel",
+            "opposite": "beautiful"
+        },
+        {
+            "word": "çirkin",
+            "opposite": "ugly"
+        },
+        {
+            "word": "zor",
+            "opposite": "difficult"
+        },
+        {
+            "word": "kolay",
+            "opposite": "easy"
+        },
+        {
+            "word": "kötü",
+            "opposite": "bad"
+        },
+        {
+            "word": "yakın",
+            "opposite": "near"
+        },
+        {
+            "word": "merhaba",
+            "opposite": "hello"
+        },
+        {
+            "word": "pazartesi",
+            "opposite": "monday"
+        },
+        {
+            "word": "salı",
+            "opposite": "tuesday"
+        },
+        {
+            "word": "çarşamba",
+            "opposite": "wednesday"
+        },
+        {
+            "word": "perşembe",
+            "opposite": "thursday"
+        },
+        {
+            "word": "cuma",
+            "opposite": "friday"
+        },
+        {
+            "word": "cumartesi",
+            "opposite": "saturday"
+        },
+        {
+            "word": "pazar",
+            "opposite": "sunday"
+        },
+        {
+            "word": "mayıs",
+            "opposite": "may"
+        },
+        {
+            "word": "ocak",
+            "opposite": "january"
+        },
+        {
+            "word": "şubat",
+            "opposite": "february"
+        },
+        {
+            "word": "mart",
+            "opposite": "march"
+        },
+        {
+            "word": "nisan",
+            "opposite": "april"
+        },
+        {
+            "word": "haziran",
+            "opposite": "june"
+        },
+        {
+            "word": "temmuz",
+            "opposite": "july"
+        },
+        {
+            "word": "ağustos",
+            "opposite": "august"
+        },
+        {
+            "word": "eylül",
+            "opposite": "september"
+        },
+        {
+            "word": "ekim",
+            "opposite": "october"
+        },
+        {
+            "word": "kasım",
+            "opposite": "november"
+        },
+        {
+            "word": "aralık",
+            "opposite": "december"
+        }
+    ]
+}
