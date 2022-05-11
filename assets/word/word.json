@@ -188,5 +188,119 @@
             "word": "aralık",
             "opposite": "december"
         }
+    ],
+    "foodanddring": [
+        {
+            "word": "kahve",
+            "opposite": "coffee"
+        },
+        {
+            "word": "bira",
+            "opposite": "beer"
+        },
+        {
+            "word": "çay",
+            "opposite": "tea"
+        },
+        {
+            "word": "şarap",
+            "opposite": "wine"
+        },
+        {
+            "word": "su",
+            "opposite": "water"
+        },
+        {
+            "word": "sığır eti",
+            "opposite": "beef"
+        },
+        {
+            "word": "tavuk",
+            "opposite": "chicken"
+        },
+        {
+            "word": "kuzu eti",
+            "opposite": "lamb"
+        },
+        {
+            "word": "balık",
+            "opposite": "fish"
+        }
+    ],
+    "healthandbody": [
+        {
+            "word": "ayak",
+            "opposite": "foot"
+        },
+        {
+            "word": "bacak",
+            "opposite": "leg"
+        },
+        {
+            "word": "kafa",
+            "opposite": "head"
+        },
+        {
+            "word": "kol",
+            "opposite": "arm"
+        },
+        {
+            "word": "parmak",
+            "opposite": "finger"
+        },
+        {
+            "word": "vücut",
+            "opposite": "body"
+        },
+        {
+            "word": "mide",
+            "opposite": "stomach"
+        },
+        {
+            "word": "sırt",
+            "opposite": "back"
+        },
+        {
+            "word": "göğüs",
+            "opposite": "back"
+        }
+    ],
+    "works": [
+        {
+            "word": "hemşire",
+            "opposite": "nurse"
+        },
+        {
+            "word": "çalışan",
+            "opposite": "employee"
+        },
+        {
+            "word": "polis memuru",
+            "opposite": "police officer"
+        },
+        {
+            "word": "aşçı",
+            "opposite": "cook"
+        },
+        {
+            "word": "mühendis",
+            "opposite": "engineer"
+        },
+        {
+            "word": "doktor",
+            "opposite": "doctor"
+        },
+        {
+            "word": "yönetici",
+            "opposite": "manager"
+        },
+        {
+            "word": "satıcı",
+            "opposite": "salesman"
+        },
+        {
+            "word": "öğretmen ",
+            "opposite": "teacher"
+        }
     ]
 }

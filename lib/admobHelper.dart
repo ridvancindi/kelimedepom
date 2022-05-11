@@ -44,4 +44,18 @@ class AdHelper {
         request: AdRequest());
     return ad;
   }
+  static BannerAd createlargesdBannerAd() {
+    BannerAd ad = new BannerAd(
+        size: AdSize.mediumRectangle,
+        adUnitId: bannerAdUnitId,
+        listener: BannerAdListener(
+            onAdLoaded: (Ad ad) => print('Ad loaded'),
+            onAdFailedToLoad: (Ad ad, LoadAdError error) {
+              ad.dispose();
+            },
+            onAdOpened: (Ad ad) => print('Ad Opened'),
+            onAdClosed: (Ad ad) => print('Ad Closed')),
+        request: AdRequest());
+    return ad;
+  }
 }

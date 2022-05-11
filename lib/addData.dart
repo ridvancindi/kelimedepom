@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:kelimedepom/testspage.dart';
 import 'db/dbHelper.dart';
 import 'models/data.dart';
 
@@ -73,6 +74,18 @@ class _addDataState extends State<addData> {
                   Navigator.pop(context, true);
                 },
                 icon: Icon(Icons.chevron_left_rounded)),
+          ),
+          bottomNavigationBar: Container(
+            height: 50,
+            color: Colors.deepOrange,
+            child: InkWell(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
+                             testspages())),
+              child: Padding(
+                padding: EdgeInsets.only(top: 8.0),
+                child: Center(child: Text("Kelime Paketi Ekle",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold ,color: Colors.white),))
+              ),
+            ),
           ),
           body: SingleChildScrollView(
               child: Column(children: [

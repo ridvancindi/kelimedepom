@@ -62,13 +62,12 @@ class _HomePageState extends State<HomePage>
               margin: EdgeInsets.only(right: 15),
               child: IconButton(
                 onPressed: () async {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
-                             testspages()));
-                  // Navigator.of(context).push(
-                  //   MaterialPageRoute(
-                  //       builder: (context) =>
-                  //           LangPage(lang != null ? lang! : "tr")),
-                  // );
+                  
+                   Navigator.of(context).push(
+                     MaterialPageRoute(
+                         builder: (context) =>
+                             LangPage(lang != null ? lang! : "tr")),
+                   );
                 },
                 icon: Icon(Icons.settings),
                 color: Colors.white,
