@@ -204,7 +204,7 @@ class _testspagesState extends State<testspages> {
                           maxWidth: double.infinity, minHeight: 60.0),
                       alignment: Alignment.center,
                       child: Text(
-                        "Vicut Parçaları (9 Kelime)",
+                        "Vücut Parçaları (9 Kelime)",
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.white, fontSize: 16.5),
                       ),
